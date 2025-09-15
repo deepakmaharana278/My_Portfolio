@@ -10,3 +10,9 @@
 html{
     scroll-behavior: smooth;
 }
+
+@layer utilities{
+    .clip-path-custom{
+        clip-path: polygon(0 0,100% 0,100% 98%,75% 95%,0 100%);
+    }
+}
