@@ -58,7 +58,7 @@ const skillsData = [
 ];
 
 const Skills = () => (
-  <section className="py-16 px-6 md:px-12 font-sans bg-gradient-to-b from-[#181829] to-[#22223b] text-gray-100">
+  <section className="py-24 pb-24 px-[12vw] md:px-[7vw] font-sans text-gray-100">
     <h2 className="text-3xl font-bold text-center mb-4 underline decoration-purple-500 underline-offset-4">
       SKILLS
     </h2>
