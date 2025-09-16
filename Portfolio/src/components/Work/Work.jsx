@@ -13,7 +13,7 @@ const Work = () => {
       title: "Personal Portfolio",
       description: "Responsive portfolio website built with React and Tailwind CSS, featuring animations and interactive UI.",
       tech: ["React", "Tailwind CSS", "Framer Motion"],
-      demoLink: "",
+      demoLink: "https://my-portfolio-chi-nine-4vbjyr31n2.vercel.app/",
       codeLink: "https://github.com/deepakmaharana278/My_Portfolio",
     },
     {
