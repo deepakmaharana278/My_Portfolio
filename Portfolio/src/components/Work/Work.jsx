@@ -41,7 +41,7 @@ const Work = () => {
       title: "Deepak-GPT",
       description: "Full-stack chatbot application using React frontend and Django backend integrating OpenAI GPT APIs for conversational AI.",
       tech: ["Python", "Django", "SQLite", "React", "Tailwind CSS", "Open AI"],
-      demoLink: "",
+      demoLink: "https://mini-chat-bot-5.onrender.com/",
       codeLink: "https://github.com/deepakmaharana278/Mini-Chat-Bot",
     },
   ];
