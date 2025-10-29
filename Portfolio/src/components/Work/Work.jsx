@@ -5,14 +5,14 @@ const Work = () => {
     {
       title: "E-commerce Platform",
       description: "Full-stack MERN application with user authentication, product management, and payment integration.",
-      tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+      tech: ["React + Vite", "Node.js", "MongoDB", "Tailwind CSS"],
       demoLink: "",
       codeLink: "https://github.com/deepakmaharana278/E-Commerce-Website",
     },
     {
       title: "Personal Portfolio",
       description: "Responsive portfolio website built with React and Tailwind CSS, featuring animations and interactive UI.",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      tech: ["React + Vite", "Tailwind CSS", "Framer Motion"],
       demoLink: "https://my-portfolio-chi-nine-4vbjyr31n2.vercel.app/",
       codeLink: "https://github.com/deepakmaharana278/My_Portfolio",
     },
@@ -43,6 +43,20 @@ const Work = () => {
       tech: ["Python", "Django", "SQLite", "React", "Tailwind CSS", "Open AI"],
       demoLink: "https://mini-chat-bot-5.onrender.com/",
       codeLink: "https://github.com/deepakmaharana278/Mini-Chat-Bot",
+    },
+    {
+      title: "Hospitl Management System",
+      description: "Full-stack HMS application using React frontend and Django backend.",
+      tech: ["Python", "Django", "SQL", "React + Vite", "Bootstrap"],
+      demoLink: "",
+      codeLink: "https://github.com/deepakmaharana278/Hospital-Management-System",
+    },
+    {
+      title: "Food Ordering System",
+      description: "A full-stack food ordering system leveraging Python, Django, and React to provide seamless restaurant management and customer ordering experience.",
+      tech: ["Python", "Django", "SQLite", "React", "Bootstrap"],
+      demoLink: "",
+      codeLink: "https://github.com/deepakmaharana278/Food-Ordering-System",
     },
   ];
   return (
