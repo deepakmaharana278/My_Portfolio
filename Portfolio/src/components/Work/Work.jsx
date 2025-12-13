@@ -55,7 +55,7 @@ const Work = () => {
       title: "Food Ordering System",
       description: "A full-stack food ordering system leveraging Python, Django, and React to provide seamless restaurant management and customer ordering experience.",
       tech: ["Python", "Django", "SQLite", "React", "Bootstrap"],
-      demoLink: "",
+      demoLink: "https://food-ordering-system-1-mfnt.onrender.com/",
       codeLink: "https://github.com/deepakmaharana278/Food-Ordering-System",
     },
   ];
