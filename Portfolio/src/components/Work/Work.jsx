@@ -48,7 +48,7 @@ const Work = () => {
       title: "Hospitl Management System",
       description: "Full-stack HMS application using React frontend and Django backend.",
       tech: ["Python", "Django", "SQL", "React + Vite", "Bootstrap"],
-      demoLink: "",
+      demoLink: "https://hospital-management-system-1-fbpb.onrender.com",
       codeLink: "https://github.com/deepakmaharana278/Hospital-Management-System",
     },
     {
