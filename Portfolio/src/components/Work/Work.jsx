@@ -1,7 +1,14 @@
 import React from 'react'
 
 const Work = () => {
-   const projects = [
+  const projects = [
+   {
+      title: "Food Ordering System",
+      description: "A full-stack food ordering system leveraging Python, Django, and React to provide seamless restaurant management and customer ordering experience.",
+      tech: ["Python", "Django", "SQLite", "React", "Bootstrap"],
+      demoLink: "https://food-ordering-system-1-mfnt.onrender.com/",
+      codeLink: "https://github.com/deepakmaharana278/Food-Ordering-System",
+    },
     {
       title: "E-commerce Platform",
       description: "Full-stack MERN application with user authentication, product management, and payment integration.",
@@ -52,11 +59,11 @@ const Work = () => {
       codeLink: "https://github.com/deepakmaharana278/Hospital-Management-System",
     },
     {
-      title: "Food Ordering System",
-      description: "A full-stack food ordering system leveraging Python, Django, and React to provide seamless restaurant management and customer ordering experience.",
-      tech: ["Python", "Django", "SQLite", "React", "Bootstrap"],
-      demoLink: "https://food-ordering-system-1-mfnt.onrender.com/",
-      codeLink: "https://github.com/deepakmaharana278/Food-Ordering-System",
+      title: "Gaming Website",
+      description: "A full-stack gaming website built using Python, Django, and React, integrating games by fetching data from a third-party API.",
+      tech: ["Python", "Django", "React + Vite", "Tailwind CSS"],
+      demoLink: "https://gaming-website-lad.vercel.app/",
+      codeLink: "https://github.com/deepakmaharana278/Gaming-Website--LAD",
     },
   ];
   return (
