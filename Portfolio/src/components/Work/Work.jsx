@@ -13,7 +13,7 @@ const Work = () => {
       title: "E-commerce Platform",
       description: "Full-stack MERN application with user authentication, product management, and payment integration.",
       tech: ["React + Vite", "Node.js", "MongoDB", "Tailwind CSS"],
-      demoLink: "",
+      demoLink: "https://e-commerce-website-ts3p.vercel.app/",
       codeLink: "https://github.com/deepakmaharana278/E-Commerce-Website",
     },
     {
