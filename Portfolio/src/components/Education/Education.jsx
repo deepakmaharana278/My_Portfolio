@@ -1,81 +1,152 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Education = () => {
   const education = [
     {
       id: 1,
-      degree: "Bachelor of Technology - B.Tech in Computer Science & Engineering",
+      degree: "B.Tech — Computer Science & Engineering",
       school: "Ajay Binay Institute of Technology (ABIT), Cuttack",
       date: "2022 – 2026",
       desc: "Graduated in CSE under BPUT. Learned core CS concepts like Programming, Operating Systems, Networks, Compiler Design, and Software Engineering.",
       img: "https://upload.wikimedia.org/wikipedia/en/e/ec/Official_logo_of_Biju_Patanaik_University_of_Technology.png",
+      tag: "UNDERGRADUATE",
     },
     {
       id: 2,
-      degree: "Higher Secondary Education - Science (XII)",
-      school: "Parama Nanda Higher Secondary School, Bolgarh (CHSE)",
+      degree: "Higher Secondary — Science (XII)",
+      school: "Parama Nanda Higher Secondary School, Bolgarh",
       date: "2020 – 2022",
-      desc: "Completed Class XII in Science stream (Physics, Chemistry, Mathematics, Computer Science).",
+      desc: "Completed Class XII in Science stream covering Physics, Chemistry, Mathematics, and Bio.",
       img: "https://chseodisha.nic.in/wp-content/themes/education/images/logos/logo.png",
+      tag: "CHSE ODISHA",
     },
     {
       id: 3,
       degree: "Secondary Education (X)",
       school: "Daspalla High School, Daspalla",
       date: "2018 – 2020",
-      desc: "Completed Class X, building strong academic foundations and interest in science & technology.",
+      desc: "Completed Class X with strong academic foundations and a growing interest in science and technology.",
       img: "https://imgs.search.brave.com/epgW0QWUn9cMqJmlnP5TXRl7UWyJDk-zIDCgt3HZWSs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vMC8wMy9C/c2Uub2Rpc2hhLmxv/Z28uanBn",
+      tag: "BSE ODISHA",
     },
   ];
 
+  const [visible, setVisible] = useState([]);
+  const refs = useRef([]);
+
+  useEffect(() => {
+    const observers = refs.current.map((el, i) => {
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setVisible((v) => [...new Set([...v, i])]);
+        },
+        { threshold: 0.15 }
+      );
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach((o) => o && o.disconnect());
+  }, []);
+
   return (
-    <section id="education" className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-gradient-to-r from-[#120b1a] via-purple-950 to-[#050414] clip-path-custom-3">
-      {/* Section Title */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
-        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
-        <p className="text-gray-400 mt-4 text-lg font-semibold">My education has been a journey of learning and development. Here are the details of my academic background</p>
+    <section
+      id="education"
+      className="py-24 px-[7vw] font-sans bg-gradient-to-r from-[#050414] via-[#0e0b33] to-[#033852] text-gray-100"
+    >
+      {/* Header */}
+      <div className="text-center mb-14">
+        <h2 className="text-4xl font-bold text-white mb-3">
+          My <span className="text-purple-400">Education</span>
+        </h2>
+        <div className="w-24 h-1 bg-purple-500 mx-auto rounded-full mb-4" />
+        <p className="text-gray-400 text-sm max-w-xl mx-auto">
+          My academic journey that built the foundation of my technical skills and knowledge
+        </p>
       </div>
 
-      {/* Education Timeline */}
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+      {/* Timeline */}
+      <div className="relative max-w-5xl mx-auto">
 
-        {/* Education Entries */}
-        {education.map((edu, index) => (
-          <div key={edu.id} className={`flex flex-col sm:flex-row items-center mb-16 ${index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"}`}>
-            {/* Timeline Circle */}
-            <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 bg-gray-400 border-4 border-[#8245ec] w-12 h-12 sm:w-16 sm:h-16 rounded-full flex justify-center items-center z-10">
-              <img src={edu.img} alt={edu.school} className="w-full h-full object-cover rounded-full" />
-            </div>
+        {/* Center vertical line */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-purple-900/50 hidden md:block" />
 
-            {/* Content Section */}
-            <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
-              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
-            >
-              {/* Flex container for image and text */}
-              <div className="flex items-center space-x-6">
-                {/* School Logo/Image */}
-                <div className="w-24 h-16 bg-white rounded-md overflow-hidden">
-                  <img src={edu.img} alt={edu.school} className="w-full h-full object-contain" />
+        <div className="flex flex-col gap-12">
+          {education.map((edu, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <div
+                key={edu.id}
+                ref={(el) => (refs.current[index] = el)}
+                className="relative flex flex-col md:flex-row items-center gap-6"
+                style={{
+                  opacity: visible.includes(index) ? 1 : 0,
+                  transform: visible.includes(index)
+                    ? "translateX(0)"
+                    : isLeft ? "translateX(-40px)" : "translateX(40px)",
+                  transition: `opacity 0.65s ease ${index * 0.2}s, transform 0.65s ease ${index * 0.2}s`,
+                }}
+              >
+                {/* LEFT side — card or spacer */}
+                <div className="w-full md:w-[45%] flex md:justify-end">
+                  {isLeft ? (
+                    <div className="w-full md:max-w-sm bg-[#0f0018] border border-purple-900/60 rounded-2xl p-5 shadow-[0_4px_24px_rgba(100,0,180,0.2)] hover:border-purple-500 hover:shadow-[0_8px_32px_rgba(139,92,246,0.3)] hover:-translate-y-1 transition-all duration-300 group">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-14 h-14 shrink-0 rounded-xl bg-white p-1.5 border border-purple-200/10">
+                          <img src={edu.img} alt={edu.school} className="w-full h-full object-contain" />
+                        </div>
+                        <div>
+                          <span className="text-[10px] tracking-[0.25em] text-purple-400 bg-purple-950/60 border border-purple-800/50 px-2 py-0.5 rounded-full uppercase font-semibold">
+                            {edu.tag}
+                          </span>
+                          <p className="text-xs text-gray-500 mt-1">{edu.date}</p>
+                        </div>
+                      </div>
+                      <h3 className="text-base font-bold text-white mb-1 group-hover:text-purple-300 transition-colors duration-300 leading-snug">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-xs text-gray-400 mb-3">{edu.school}</p>
+                      <div className="h-px bg-purple-900/40 mb-3" />
+                      <p className="text-xs text-gray-400 leading-relaxed">{edu.desc}</p>
+                    </div>
+                  ) : (
+                    <div className="hidden md:block" />
+                  )}
                 </div>
 
-                {/* Degree, School Name, and Date */}
-                <div className="flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl sm:text-xl font-semibold text-white">{edu.degree}</h3>
-                    <h4 className="text-md sm:text-sm text-gray-300">{edu.school}</h4>
-                  </div>
-                  <p className="text-sm text-gray-500 mt-2">{edu.date}</p>
+                {/* Center dot */}
+                <div className="relative z-10 shrink-0 w-5 h-5 rounded-full bg-purple-600 border-4 border-[#0e0b33] shadow-[0_0_12px_rgba(139,92,246,0.8)] hidden md:block" />
+
+                {/* RIGHT side — card or spacer */}
+                <div className="w-full md:w-[45%] flex md:justify-start">
+                  {!isLeft ? (
+                    <div className="w-full md:max-w-sm bg-[#0f0018] border border-purple-900/60 rounded-2xl p-5 shadow-[0_4px_24px_rgba(100,0,180,0.2)] hover:border-purple-500 hover:shadow-[0_8px_32px_rgba(139,92,246,0.3)] hover:-translate-y-1 transition-all duration-300 group">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-14 h-14 shrink-0 rounded-xl bg-white p-1.5 border border-purple-200/10">
+                          <img src={edu.img} alt={edu.school} className="w-full h-full object-contain" />
+                        </div>
+                        <div>
+                          <span className="text-[10px] tracking-[0.25em] text-purple-400 bg-purple-950/60 border border-purple-800/50 px-2 py-0.5 rounded-full uppercase font-semibold">
+                            {edu.tag}
+                          </span>
+                          <p className="text-xs text-gray-500 mt-1">{edu.date}</p>
+                        </div>
+                      </div>
+                      <h3 className="text-base font-bold text-white mb-1 group-hover:text-purple-300 transition-colors duration-300 leading-snug">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-xs text-gray-400 mb-3">{edu.school}</p>
+                      <div className="h-px bg-purple-900/40 mb-3" />
+                      <p className="text-xs text-gray-400 leading-relaxed">{edu.desc}</p>
+                    </div>
+                  ) : (
+                    <div className="hidden md:block" />
+                  )}
                 </div>
               </div>
-              <p className="mt-4 text-gray-400">{edu.desc}</p>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
