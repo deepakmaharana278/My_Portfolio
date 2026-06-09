@@ -176,7 +176,7 @@ const getReply = (input) => {
 
 
   if (/(resume|\bcv\b|download)/i.test(msg))
-    return { text: `📄 You can download Deepak's CV here.\n\nIt includes his education, skills, projects, and experience:`, links: [{ label: "Download CV", url: "https://drive.google.com/file/d/1JUIfetCwgZeRVwyyx9rX1OMXz-6yaZE-/view?usp=drivesdk" }] };
+    return { text: `📄 You can download Deepak's CV here.\n\nIt includes his education, skills, projects, and experience:`, links: [{ label: "Download CV", url: "https://drive.google.com/file/d/1fbrqoBnS-qmEA7Yxgkshl2aOy3e1tdof/view?usp=drivesdk" }] };
 
   if (/(github|source code|\brepo\b|repository)/i.test(msg))
     return { text: `⭐ All of Deepak's project source codes are publicly available on GitHub:`, links: [{ label: "GitHub Profile", url: "https://github.com/deepakmaharana278" }] };

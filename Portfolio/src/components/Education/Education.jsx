@@ -9,7 +9,7 @@ const Education = () => {
       date: "2022 – 2026",
       desc: "Graduated in CSE under BPUT. Learned core CS concepts like Programming, Operating Systems, Networks, Compiler Design, and Software Engineering.",
       img: "https://upload.wikimedia.org/wikipedia/en/e/ec/Official_logo_of_Biju_Patanaik_University_of_Technology.png",
-      tag: "UNDERGRADUATE",
+      tag: "BPUT ODISHA",
     },
     {
       id: 2,
